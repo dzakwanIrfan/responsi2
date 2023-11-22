@@ -48,6 +48,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="/css/profil.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,11 +64,11 @@
         </div>
         <div class="profil-content">
             <div class="profil">
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data" id="profil">
                     <input type="file" id="uploadInput" style="display: none;" accept=".jpg, .png" name="gambar">
                 <div class="profil-group">
                     <div class="profil-label"><label for="nama">NAMA</label></div>
-                    <div class="profil-content"><input type="text" value="<?= $_SESSION['nama'] ?>" id="nama" name="nama"></div>
+                    <div class="profil-content"><input type="text" value="<?= $_SESSION['nama'] ?>" id="nama" name="nama" oninput="cekNama()"></div>
                 </div>
                 <div class="profil-group">
                     <div class="profil-label"><label for="username">USERNAME</label></div>
@@ -75,7 +76,7 @@
                 </div>
                 <div class="profil-group">
                     <div class="profil-label"><label for="bio">BIO</label></div>
-                    <div class="profil-content"><textarea  cols="30" rows="10" id="bio" name="bio"><?= $_SESSION['bio'] ?></textarea></div>
+                    <div class="profil-content"><textarea  cols="30" rows="10" id="bio" name="bio" oninput="cekBio()"><?= $_SESSION['bio'] ?></textarea></div>
                 </div>
                 <div class="profil-group">
                     <div class="profil-label"><label for="password">PASSWORD</label></div>
@@ -91,3 +92,24 @@
     </div>
 </body>
 </html>
+
+<script>
+        // validasi form
+    const namaInput = document.getElementById('nama');
+    function cekNama() {
+        let regex = /^[A-Za-z ]+$/;
+        if (!regex.test(namaInput.value) && namaInput.value != "") {
+            alert("Nama tidak boleh memiliki angka atau simbol!");
+            namaInput.value = namaInput.value.replace(/[^A-Za-z ]/g, '');
+        }
+    }
+
+    const bio = document.getElementById('bio');
+    function cekBio() {
+        let regex = /^[A-Za-z0-9 !@#$%^&*()_+\-=\[\]{};:\\|,.<>\/?]*$/;
+        if (!regex.test(bio.value) && bio.value != "") {
+            alert("Bio sebaiknya tidak boleh ada tanda petik");
+            bio.value = bio.value.replace(/[\'\"]+/g, '');
+        }
+    }
+</script>
