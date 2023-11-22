@@ -24,7 +24,6 @@
 
     if(isset($_POST["edit_karakter"])){
         $id = $_POST['id_karakter'];
-        $id = $_GET["id"];
         $nama_karakter = $_POST['nama_karakter'];
         $id_kelompok = $_POST['id_kelompok'];
         $deskripsi = $_POST["deskripsi"];
