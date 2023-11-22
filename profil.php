@@ -48,5 +48,6 @@
             <div class="img"><img src="/css/img/profil-finger.png" alt=""></div>
         </div>
     </div>
+    <?php include('footer.html') ?>
 </body>
 </html>
