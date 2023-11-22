@@ -23,6 +23,7 @@
     }
 
     if(isset($_POST["edit_karakter"])){
+        $id = $_POST['id_karakter'];
         $id = $_GET["id"];
         $nama_karakter = $_POST['nama_karakter'];
         $id_kelompok = $_POST['id_kelompok'];
@@ -48,7 +49,7 @@
         $query = mysqli_query($koneksi, $sql);
 
         if($query){
-            header("location: index.php");
+            header("location: karakter.php?id".$id);
         }else{
             echo $querry;
         }

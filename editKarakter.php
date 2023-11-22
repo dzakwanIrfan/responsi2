@@ -26,6 +26,7 @@
 <div class="bg">
     <div class="container">
         <form action="proses_karakter.php" method="post" enctype="multipart/form-data" id="karakter">
+            <input type="hidden" name="id_karakter" value="<?= $row['id_karakter']; ?>">
             <div class="container-form">
                 <div class="kiri">
                     <input type="file" id="uploadInput" style="display: none;" accept=".jpg, .png" name="gambar">
