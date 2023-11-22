@@ -35,15 +35,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Lakki+Reddy&display=swap" rel="stylesheet">
     <title>Login Page</title>
 </head>
 <body>
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="login">
-            <input type="text" id="username" name="username" placeholder="Username">
-            <input type="password" id="password" name="password" placeholder="Password">
-            <button type="submit" name="submit">Login</button>
-    </form>
-    <small><p>Belum memiliki akun? <a href="register.php">Registrasi</a></p></small>
+    
+    <div class="login-container">
+        <div class="glass">
+            <img src="/css/img/login.png" alt="">
+            <h2>LOGIN</h2>
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="login">          
+                <div class="input-group">
+                    <input type="text" id="username" name="username" placeholder="Username">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Password">
+                </div>
+                <button type="submit" name="submit">Login</button>
+            </form>
+            <small><p>Belum memiliki akun? <a href="register.php">Registrasi</a></p></small>
+        </div>
+    </div>
 </body>
 </html>
 
