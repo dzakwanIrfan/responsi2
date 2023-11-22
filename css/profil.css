@@ -1,0 +1,156 @@
+:root{
+    --aksen: #41354D;
+}
+
+*{
+    font-family: 'Outfit', sans-serif;
+}
+
+body{
+    background-image: url(/css/img/profil-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.profil-container {
+    position: relative;
+    margin-top: 5rem;
+}
+
+.banner img{
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+/* batas */
+
+.image-container > img{
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    top: -5rem;
+    left: 10rem;
+}
+
+.overlay-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.image-container:hover .overlay-text{
+    opacity: 1;
+}
+
+/* batas */
+
+/* .profil-foto > img{
+    height: 12rem;
+    width: 12rem;
+    top: 5rem;
+    left: 10rem;
+    position: absolute;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+} */
+.profil-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.profil-content .img{
+    width: 40%;
+    text-align: center;
+}
+
+.profil{
+    width: 40%;
+}
+
+.profil-group{
+    margin-bottom: 1rem;
+}
+
+.profil-label{
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: rgba(25, 177, 217, 1);
+}
+
+.profil-content > input, .profil-content > textarea{
+    border: 4px solid rgba(126, 243, 254, 1);
+    outline: none;
+    font-size: 1rem;
+    background-color: rgba(1, 28, 44, 0.8);
+    width: 100%;
+    height: 2.5rem;
+    padding-left: 1rem;
+    border-radius: 1rem;
+    color: white;
+}
+
+.profil-content > textarea{
+    height: 10rem;
+    resize: none;
+}
+
+.profil-submit{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.profil-submit > input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    padding: 0.5rem 5rem;
+    background-color: rgba(1, 28, 44, 0.8);
+    color: #fff;
+    border: 4px solid rgba(126, 243, 254, 1);
+    border-radius: 1rem 0 1rem 0;
+    cursor: pointer;
+    margin-top: 1em;
+    transition: all ease-in 0.3s;
+    font-size: 1rem;
+}
+
+.profil-submit > input:hover {
+    background-color: rgba(1, 28, 44, 1);
+}
+
+/* Responsiveness */
+@media only screen and (max-width: 768px) {
+    .profil-content .img {
+        display: none; 
+    }
+
+    .profil{
+        width: 70%;
+    }
+}
