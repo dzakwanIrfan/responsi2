@@ -89,7 +89,7 @@
 <header>
     <div class="logo"><a href="index.php"><img src="/css/img/logo.png" alt=""></a></div>
     <div class="profile" onclick="toggleProfileOptions()">
-      <div class="profile-name"> {{ tambahin session nama }} </div>
+      <div class="profile-name"> <?=$_SESSION['nama']?> </div>
       <div class="profile-options" id="profileOptions">
         <a href="profil.php" class="icon"><span>Profile</span><img width="24" height="24" src="/css/icon/profil.png" alt="user"/></a>
         <a href="logout.php" class="icon"><span>Logout</span><img width="30" height="30" src="/css/icon/logout.png" alt="exit"/></a>

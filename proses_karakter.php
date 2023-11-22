@@ -49,7 +49,7 @@
         $query = mysqli_query($koneksi, $sql);
 
         if($query){
-            header("location: karakter.php?id".$id);
+            header("location: karakter.php?id=".$id);
         }else{
             echo $querry;
         }
