@@ -1,0 +1,103 @@
+:root{
+    --aksen: #41354D;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('img/reg-bg.jpg'); /* Ganti 'background.jpg' dengan URL gambar latar belakang Anda */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    text-align: center;
+}
+
+.container-foto{
+    width: 350px;
+}
+
+.glass {
+    /* From https://css.glass */
+    background-image: radial-gradient(circle, rgba(217, 217, 217, 0), rgba(255, 255, 255, 0.4));
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    padding: 0 40px 40px 40px;
+    display: flex;
+    overflow: hidden;
+}
+
+.glass > .container-foto > img{
+    height: 300px;
+    bottom: 0;
+    position: absolute;
+    left: 55px;
+    bottom: 50px;
+    padding: 1rem;
+}
+
+h2 {
+    color: rgba(9, 15, 31, 1);
+    font-family: 'Lakki Reddy', serif;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.input-group:not(:first-child) {
+    margin: 5px 0;
+}
+
+input {
+    width: 250px;
+    border: none;
+    border-bottom: 1.5px solid rgba(65, 53, 77, 1); /* Warna garis bawah */
+    background-color: transparent;
+    outline: none;
+    margin-bottom: 1em;
+    line-height: 2;
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 1); /* Warna placeholder */
+    font-weight: 500;
+    font-size: 14px;
+}
+
+input:focus::placeholder {
+    color: transparent; /* Placeholder akan menghilang saat input mendapatkan fokus */
+}
+
+button {
+    width: 100%;
+    padding: 8px;
+    background-image: linear-gradient(to bottom, rgba(9, 15, 31, 1), rgba(3, 21, 71, 0.46));
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1em;
+    transition: all ease-in 0.3s;
+}
+
+button:hover {
+    background-color: var(--aksen);
+}
+
+small{
+    color: rgba(0, 0, 0, 1);
+}
+
+small a{
+    color: rgba(0, 0, 0, 1);
+    font-weight: 700;
+}
