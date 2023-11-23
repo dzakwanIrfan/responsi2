@@ -60,12 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
             return false;
         }
-
-        if (password != konfirmasi){
-            alert('Password tidak sama');
-            event.preventDefault();
-            return false;
-        }
     });
 });
 
