@@ -65,3 +65,43 @@
     </div>
 </body>
 </html>
+
+<script>
+    const uploadInput = document.getElementById('uploadInput');
+    const imagePreview = document.getElementById('imagePreview');
+
+    imagePreview.addEventListener('click', function () {
+        uploadInput.click();
+    });
+
+    uploadInput.addEventListener('change', function () {
+        if (uploadInput.files && uploadInput.files[0]) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                imagePreview.src = e.target.result;
+            };
+
+            reader.readAsDataURL(uploadInput.files[0]);
+        }
+    });
+
+    // validasi form
+    const namaInput = document.getElementById('nama');
+    function cekNama() {
+        let regex = /^[A-Za-z ]+$/;
+        if (!regex.test(namaInput.value) && namaInput.value != "") {
+            alert("Nama Karakter tidak boleh memiliki angka atau simbol!");
+            namaInput.value = namaInput.value.replace(/[^A-Za-z ]/g, '');
+        }
+    }
+
+    const deskripsi = document.getElementById('deskripsi');
+    function cekDeskripsi() {
+        let regex = /^[A-Za-z0-9 !@#$%^&*()_+\-=\[\]{};:\\|,.<>\/?]*$/;
+        if (!regex.test(deskripsi.value) && deskripsi.value != "") {
+            alert("Deskripsi sebaiknya tidak boleh ada tanda petik");
+            deskripsi.value = deskripsi.value.replace(/[\'\"]+/g, '');
+        }
+    }
+</script>
