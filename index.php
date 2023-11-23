@@ -79,3 +79,43 @@
 </body>
 </html>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const slidesContainer = document.querySelector(".slides");
+    const slides = document.querySelectorAll(".slide");
+    const prevButton = document.querySelector(".prev");
+    const nextButton = document.querySelector(".next");
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slidesContainer.style.transform = `translateX(${-index * 33.33}%)`;
+    }
+
+    function changeSlide(direction) {
+      currentIndex += direction;
+
+      if (currentIndex < 0) {
+        currentIndex = slides.length - 1;
+      } else if (currentIndex >= slides.length-2) {
+        currentIndex = 0;
+      }
+
+      if (currentIndex < slides.length - 2) {
+        showSlide(currentIndex);
+      } else {
+        currentIndex = slides.length - 3;
+        showSlide(currentIndex);
+      }
+    }
+
+    prevButton.addEventListener("click", function() {
+      changeSlide(-1);
+    });
+
+    nextButton.addEventListener("click", function() {
+      changeSlide(1);
+    });
+  });
+</script>
+
